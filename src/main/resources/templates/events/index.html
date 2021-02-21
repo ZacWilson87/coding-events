@@ -2,10 +2,15 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
 </head>
 <body>
 <h1>All Events</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${events} and ${events.size()}">No Events Scheduled Yet!</p>
+
 <ul>
     <th:block th:each="event : ${events}">
         <li th:text="${event}"></li>
